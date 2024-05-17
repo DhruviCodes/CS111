@@ -1,0 +1,44 @@
+/*
+ * Write your program inside the main method to find the order
+ * which the bus the student needs to take will arrive
+ * according to the assignemnt description. 
+ *
+ * To compile:
+ *        javac BusStop.java
+ * 
+ * DO NOT change the class name
+ * DO NOT use System.exit()
+ * DO NOT change add import statements
+ * DO NOT add project statement
+ * 
+ */
+public class BusStop {
+
+    public static void main(String[] args) {
+
+        int l = args.length;
+        char[] order = new char[l-1];
+        for(int i = 0; i<l-1;i++)
+        {
+            char c= args[i].charAt(0);
+            order[i]=c;
+
+        }
+        char bus =args[l-1].charAt(0);
+        int c=0;
+        for(int j=0; j<l-1;j++)
+        {
+            if(order[j]==bus)
+            {
+                System.out.println(j+1);
+                c++;
+                break;
+            }
+        }
+        if(c==0)
+        {
+            System.out.println("-1");
+        }
+
+    }
+}
