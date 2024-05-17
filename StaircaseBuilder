@@ -1,0 +1,66 @@
+/*
+ * Write your program inside the main method to build
+ * a staicase in a 2D array of characters according
+ * to the assignment description
+ *
+ * To compile:
+ *        javac StaircaseBuilder.java
+ * 
+ * DO NOT change the class name
+ * DO NOT use System.exit()
+ * DO NOT change add import statements
+ * DO NOT add project statement
+ * 
+ */
+
+
+ public class StaircaseBuilder {
+    
+    public static void main(String[] args) 
+    {
+
+        int d = Integer.parseInt(args[0]);
+        int bricks = Integer.parseInt(args[1]);
+        String[][] staircase = new String[d][d];
+        
+        for (int l = 0; l <d; l++)
+        {
+            // Loop through all elements of current row
+            for (int k = 0; k<d; k++)
+                staircase[l][k]= " ";
+        } 
+        
+        int b= bricks;
+        int i=0;
+        
+            for(i=0;i<d;i++)
+                
+                {
+                    if(b==0)
+                    {break;
+                        
+                    }
+                for(int j=d-1;j>=(d-i)-1;j--)
+                    {
+                        staircase[j][i]="X";
+                        b--;
+                        if(b==0)
+                        {break;
+                        }
+                    }
+                    
+                     
+                }
+        
+        for (int l = 0; l <d; l++)
+        {
+            // Loop through all elements of current row
+            for (int k = 0; k <d; k++)
+               { System.out.print(staircase[l][k]);}
+               System.out.println();
+        } 
+    
+        System.out.println("Number of bricks left = "+ b);
+    }
+
+}
